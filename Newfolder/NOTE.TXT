@@ -1,0 +1,69 @@
+   if(this.state.keyboard == 1){
+
+      
+      if(this.state.searchuser == "@"){
+        return<View><View  style={{height:height1/12,borderColor:"#7fc3e0",borderBottomWidth:2,padding:5,marginTop:5,backgroundColor:"white",flexDirection:"row"}}><Ionn name="close" onPress={()=>{this.setState({keyboard:0})}} size={30} style={{flex:1,marginTop:5}}/><TextInput editable={true}
+        onChangeText={(value)=>{this.setState({searchuser:value});}}  onPressIn={()=>{this.props.n}} placeholder="در دیجیکالا جست و جو کنید" placeholderTextColor="#5295df"  style={{flex:9,height:height1/13-15,backgroundColor:"#e5f5f7",borderRadius:5}} /></View>
+        <Text>محصول خود را جست و جو کنید!</Text></View>
+      }  
+      return <View style={{width:"100%",height:height1}}>
+        <View  style={{height:height1/12,borderColor:"#7fc3e0",borderBottomWidth:2,padding:5,marginTop:5,backgroundColor:"white",flexDirection:"row"}}><Ionn name="close" onPress={()=>{this.setState({searchuser:"@"});this.setState({keyboard:0})}} size={30} style={{flex:1,marginTop:5}}/><TextInput editable={true}
+         onChangeText={(value)=>{this.setState({searchuser:value});}}  placeholder="در دیجیکالا جست و جو کنید" placeholderTextColor="#5295df"  style={{flex:9,height:height1/13-15,backgroundColor:"#e5f5f7",borderRadius:5}} /></View>
+        <ScrollView style={{height:height1,width:"100%"}}>
+        {Data.map((item)=>{
+         //console.log(item.name.includes("شلوار"))
+         
+         if(item.name !== undefined){
+           if(this.state.searchuser == ""){
+             this.setState({searchuser:"@"})
+            
+           }
+          if(item.name.toLowerCase().includes(this.state.searchuser.toLowerCase())){
+            return/*<Text>{item.name}</Text>*/<ScrollView style={{width:"100%",height:height1/4}}>
+              
+            <TouchableOpacity style={{height:height/1.5}} onPress={()=>{this.setState({cate: item.cate_1});this.props.navigation.navigate('search',{id:item.id})}}><View style={{flexDirection:"row"}} ><Image source={{uri:Data[item.id].prev1}}   style={{height:height1/5,width:width1/3}}/><View style={{backgroundColor:"white",width:width/1.5,padding:5}} ><Text  style={{backgroundColor:"white",textAlign:"right",width:"100%",fontSize:12,alignSelf:"flex-start"}} numberOfLines={2}>{Data[item.id].name}</Text><Text onPress={()=>{console.log(this.props.deff)}} style={{alignSelf:"flex-end"}}>رنگ {item.colors.length} مورد موجود <View style={{backgroundColor:item.colorname,borderRadius:50,height:15,width:15}}></View><Text>  {item.color}  </Text></Text><Text>قیمت {Data[item.id].price}</Text></View></View></TouchableOpacity>
+          </ScrollView> 
+          }
+          
+         }
+            
+          
+        })}
+        </ScrollView>
+        </View>
+    } 
+
+    if(this.state.keyboard == 1){
+
+      
+      if(this.state.searchuser == "@"){
+        return<View><View  style={{height:height1/12,borderColor:"#7fc3e0",borderBottomWidth:2,padding:5,marginTop:5,backgroundColor:"white",flexDirection:"row"}}><Ionn name="close" onPress={()=>{this.setState({keyboard:0})}} size={30} style={{flex:1,marginTop:5}}/><TextInput editable={true}
+        onChangeText={(value)=>{this.setState({searchuser:value});}}  placeholder="در دیجیکالا جست و جو کنید" placeholderTextColor="#5295df"  style={{flex:9,height:height1/13-15,backgroundColor:"#e5f5f7",borderRadius:5}} /></View>
+        <Text>محصول خود را جست و جو کنید!</Text></View>
+      }  
+      return <View style={{width:"100%",height:height1}}>
+        <View  style={{height:height1/12,borderColor:"#7fc3e0",borderBottomWidth:2,padding:5,marginTop:5,backgroundColor:"white",flexDirection:"row"}}><Ionn name="close" onPress={()=>{this.setState({searchuser:"@"});this.setState({keyboard:0})}} size={30} style={{flex:1,marginTop:5}}/><TextInput editable={true}
+         onChangeText={(value)=>{this.setState({searchuser:value});}}  placeholder="در دیجیکالا جست و جو کنید" placeholderTextColor="#5295df"  style={{flex:9,height:height1/13-15,backgroundColor:"#e5f5f7",borderRadius:5}} /></View>
+        <ScrollView style={{height:height1,width:"100%"}}>
+        {Data.map((item)=>{
+         //console.log(item.name.includes("شلوار"))
+         
+         if(item.name !== undefined){
+           if(this.state.searchuser == ""){
+             this.setState({searchuser:"@"})
+            
+           }
+          if(item.name.toLowerCase().includes(this.state.searchuser.toLowerCase())){
+            return/*<Text>{item.name}</Text>*/<ScrollView style={{width:"100%",height:height1/4}}>
+              
+            <TouchableOpacity style={{height:height/1.5}} onPress={()=>{this.setState({cate: item.cate_1});this.props.navigation.navigate('search',{id:item.id})}}><View style={{flexDirection:"row"}} ><Image source={{uri:Data[item.id].prev1}}   style={{height:height1/5,width:width1/3}}/><View style={{backgroundColor:"white",width:width/1.5,padding:5}} ><Text  style={{backgroundColor:"white",textAlign:"right",width:"100%",fontSize:12,alignSelf:"flex-start"}} numberOfLines={2}>{Data[item.id].name}</Text><Text onPress={()=>{console.log(this.props.deff)}} style={{alignSelf:"flex-end"}}>رنگ {item.colors.length} مورد موجود <View style={{backgroundColor:item.colorname,borderRadius:50,height:15,width:15}}></View><Text>  {item.color}  </Text></Text><Text>قیمت {Data[item.id].price}</Text></View></View></TouchableOpacity>
+          </ScrollView> 
+          }
+          
+         }
+            
+          
+        })}
+        </ScrollView>
+        </View>
+    }
